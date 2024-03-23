@@ -1,0 +1,44 @@
+---
+title: 2149 - Public Health Burden of Transport in Delhi
+authors:
+- Rahul Goel
+- Sarath Guttikunda
+- Geetam Tiwari
+date: '2017-01-01'
+publishDate: '2024-03-23T17:06:27.856184Z'
+publication_types:
+- article-journal
+publication: '*Journal of Transport & Health*'
+doi: https://doi.org/10.1016/j.jth.2017.05.350
+abstract: Background Motorised transport contributes to health burden resulting from
+  inactive lifestyles, air pollution (AP), and road traffic injuries (RTI). The burden
+  is the greatest in rapidly motorising, low- and middle-income countries such as
+  India. Cities in India are generally more polluted, travel is conducted through
+  a diverse range of travel modes, and number of motor vehicles is growing rapidly
+  in the absence of sufficient infrastructure for walking and cycling. The magnitude
+  of health burden due to the three risk factors (AP, RTI and physical activity (PA))
+  and their determinants have not been quantified in India at a city level. Methods
+  We present a case study of Delhi. We estimated travel patterns from household travel
+  survey, developed emission forecast model for transport and modelled fine particulate
+  AP, measured on-road exposure to pollution, and analysed RTI database. We used comparative
+  risk assessment approach to estimate the baseline health burden attributed to the
+  three risk factors. Results Pollution exposure and injury risk during active travel
+  are an order of magnitude higher than in high-income settings. We estimated that
+  9% of all-cause mortality for population older than 15 years is attributed to transport-related
+  AP or RTI. Up to 13% of baseline death burden has been prevented due to current
+  levels of travel-related PA. In the presence of multitude of pollution sources,
+  the share of passenger travel (motorised two-wheelers, cars, buses and auto rickshaws)
+  to overall pollution remains modest (10%).There are significant sex-specific differences
+  in health burden. These result from lower share of females in overall travel and
+  higher baseline health burden among males. Exposure estimates also indicate significant
+  socio-economic inequalities. Conclusions High levels of air pollution exposure and
+  injury risk during active travel compared to cars need to be reduced to retain the
+  current mode shares. Continuing absence of physical activity from public discourse
+  on transport in India needs to be addressed. AP mitigation policies with a focus
+  only on passenger transport will be insufficient to have any significant impact.
+  Sustained reduction in the current levels of AP can only be achieved through a multi-sector
+  strategy.
+links:
+- name: URL
+  url: https://www.sciencedirect.com/science/article/pii/S2214140517305091
+---

@@ -1,0 +1,36 @@
+---
+title: Nature of air pollution, emission sources, and management in the Indian cities
+authors:
+- Sarath K. Guttikunda
+- Rahul Goel
+- Pallavi Pant
+date: '2014-01-01'
+publishDate: '2024-03-23T17:06:27.762953Z'
+publication_types:
+- article-journal
+publication: '*Atmospheric Environment*'
+doi: https://doi.org/10.1016/j.atmosenv.2014.07.006
+abstract: The global burden of disease study estimated 695,000 premature deaths in
+  2010 due to continued exposure to outdoor particulate matter and ozone pollution
+  for India. By 2030, the expected growth in many of the sectors (industries, residential,
+  transportation, power generation, and construction) will result in an increase in
+  pollution related health impacts for most cities. The available information on urban
+  air pollution, their sources, and the potential of various interventions to control
+  pollution, should help us propose a cleaner path to 2030. In this paper, we present
+  an overview of the emission sources and control options for better air quality in
+  Indian cities, with a particular focus on interventions like urban public transportation
+  facilities; travel demand management; emission regulations for power plants; clean
+  technology for brick kilns; management of road dust; and waste management to control
+  open waste burning. Also included is a broader discussion on key institutional measures,
+  like public awareness and scientific studies, necessary for building an effective
+  air quality management plan in Indian cities.
+tags:
+- Emissions control
+- Vehicular emissions
+- Power plants
+- Brick kilns
+- Health impacts
+links:
+- name: URL
+  url: https://www.sciencedirect.com/science/article/pii/S1352231014005275
+---
