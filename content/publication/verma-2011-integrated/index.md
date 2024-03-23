@@ -1,0 +1,51 @@
+---
+title: An integrated approach for optimal rail transit corridor identification and
+  scheduling using geographical information system
+authors:
+- Ashish Verma
+- Devendra Upadhyay
+- Rahul Goel
+date: '2011-01-01'
+publishDate: '2024-03-23T17:06:27.735726Z'
+publication_types:
+- article-journal
+publication: '*Journal of King Saud University - Science*'
+doi: https://doi.org/10.1016/j.jksus.2011.02.002
+abstract: "In this work an integrated approach has been proposed to identify and schedule
+  a rail transit corridor in a city which has a potential demand for a new rail based
+  mass transit system besides the street transit system and existing rail-based system
+  (if any). The motivation for the present study comes from the present Indian context
+  where, because of recent initiatives of Central Urban Development Ministry, many
+  Urban Local Bodies (ULBs) and transit agencies need to master plan new rail based
+  systems in an optimum way and at the same time attempting to integrate them with
+  other existing public transport (PT) modes. While aligning the new rail transit
+  system, the primary focus of the integrated approach is to optimize the origin–destination
+  (O–D) travel time of the user and at the same time attempting to minimize the operators'
+  cost. The proposed rail corridor identification model consists of three stages:
+  public transport demand forecasting, creation of corridor link set, and optimization
+  of rail corridor using Geographical Information System (GIS). The objective function
+  for train scheduling model is fixed as minimization of sum of operating cost of
+  trains (operator cost) and total waiting time cost of passengers boarding the train
+  (user costs) subject to load factor and waiting time constraints. The dwell time
+  of train at stations, which is usually considered constant, has been taken as a
+  variable which depends on the actual number of passengers boarding and alighting
+  the train. The model is applied on Thane municipal corporation (TMC) area, a major
+  urban center of the Mumbai metropolitan region (MMR), India. The maximum peak hour
+  ridership obtained on the identified corridor was found to be ideal for recommending
+  light-rail transit system (LRT). The successful application of the model shows the
+  capability of proposed model for a typical Indian city, which has potential demand
+  for a new rail system."
+tags:
+- Rail transportation
+- Train scheduling
+- Public transportation
+- Geographic information systems
+- Transportation corridors
+- Transportation planning
+- Optimization
+- Integrated systems
+- India
+links:
+- name: URL
+  url: https://www.sciencedirect.com/science/article/pii/S101836471100005X
+---

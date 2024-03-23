@@ -1,0 +1,42 @@
+---
+title: What and How of Effective Police Enforcement
+authors:
+- Dinesh Mohan
+- Rahul Goel
+date: '2021-01-01'
+publishDate: '2024-03-23T17:06:27.951752Z'
+publication_types:
+- chapter
+publication: '*Transport and Safety: Systems, Approaches, and Implementation*'
+doi: 10.1007/978-981-16-1115-5_5
+abstract: 'Enforcement of traffic rules and regulations forms an important component
+  of strategies to reduce deaths and injuries due to road traffic crashes. As with
+  many other issues concerning road safety policy, it is not always clear whether
+  common sense approaches in police enforcement actually reduce injuries and fatalities
+  on the road. It is therefore important to assess whether a given enforcement measure,
+  though seemingly beneficial in its intent, actually results in any reduction of
+  delinquent behaviour of drivers and number of crashes. In this article, we assess
+  the evidence base of effectiveness of on-road enforcement measures by conducting
+  a review of systematic reviews on this topic. In this review, we focused only on
+  the objective police programmes or strategies and excluded the reviews which assessed
+  the effectiveness of a traffic enforcement law. We answer the following questions
+  in this review: (a) what is the theoretical basis of different enforcement measures?
+  (b) What are the different road safety enforcement measures for which evidence is
+  available in systematic reviews and how current is this evidence? (c) What are the
+  different limitations or drawbacks of different studies as reported by the systematic
+  reviews and what are their implications on results? (d) What are the different factors
+  which limit the generalisations of available evidence across different settings
+  or across different types of modes? Our review suggests that: (i) legislation and
+  enforcement are effective when violations are visible and easy to detect. (ii) Strict
+  punishment not as effective as subjective perception of being caught violating a
+  law. (iii) There is an absence of studies that could provide guidelines on police
+  enforcement for low and middle-income countries on the following issues: (a) influence
+  of road and infrastructure design on traffic violations and the difficulties of
+  enforcement when designs are not adequate for the kind and volume of road users
+  present; (b) critical/minimum levels of enforcement necessary for different traffic
+  violations; (c) enforcement methods that would be cost effective in situations with
+  high proportion of motorcycles and other vulnerable road users.'
+links:
+- name: URL
+  url: https://doi.org/10.1007/978-981-16-1115-5_5
+---

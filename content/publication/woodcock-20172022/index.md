@@ -1,0 +1,56 @@
+---
+title: 2022 - Towards an Integrated Global Transport and Health Assessment Tool (TIGTHAT)
+authors:
+- James Woodcock
+- Marko Tainio
+- Thiago Herick de Sa
+- Audrey de Nazelle
+- Rahul Goel
+- Nelson Gouveia
+- Geetam Tiwari
+- Asish Verma
+- Jaime Miranda
+- Soren Brage
+date: '2017-01-01'
+publishDate: '2024-03-23T17:06:27.847598Z'
+publication_types:
+- article-journal
+publication: '*Journal of Transport & Health*'
+doi: https://doi.org/10.1016/j.jth.2017.05.258
+abstract: 'Background Urban land transport has positive (physical activity) and negative
+  (road traffic injuries and air pollutants) side effects. Studies in high income
+  cities have found substantial population health benefits from mode shift to active
+  travel, with physical activity dominating the impact. However, our earlier work
+  in Brazil, India, and Malaysia identifies a more varied picture, with a larger burden
+  and trickier trade-offs. To investigate risks and benefits in low and medium income
+  countries (LMICs), we will conduct in year 2017-19 international project, TIGTHAT,
+  which will develop methods to estimate these trade-offs. Methods In this project
+  we lay the basis for a globally applicable stochastic synthesis engine with a user
+  friendly interface, to support evidence based decision making on transport and health.
+  A key challenge is data comparability and quality. Our international, multidisciplinary
+  team will assess what data is available and develop approaches for mapping (calibrating)
+  available to desired data, while representing propagated uncertainty. The main objectives
+  of TIGTHAT are: Health Impact modelling (physical activity, air pollution, and road
+  traffic injuries) of scenarios for two new cities in India (Bengaluru and Visakhapatnam)
+  and developing and reanalysing for two already analysed cities (Sao Paulo, Brazil,
+  and Delhi, India). The objective is both to generate results about the size of impacts,
+  but more importantly to understand how choice of data and uncertainty affects the
+  results. Test the feasibility of Google Street View to estimate traffic mode share
+  in multiple cities, and to develop an ecological model to predict population distributions
+  of travel time mode share and total physical activity. Appraise urban traffic injury
+  data in a range of settings globally, identify patterns, develop generalizable rules
+  for combining data, and validate by testing them in selected cities Develop and
+  test a generalizable approach to estimate changes in transport related air pollution
+  (fine particulate matter, PM2.5) Identify, evaluate, and compare personal travel
+  survey data for multiple settings and how estimates for travel physical activity
+  could differ due to diverse survey methods. Results This project lays the foundation
+  for an analytic modelling framework to estimate multiple outcomes with respect to
+  a major determinant of population health. In this presentation we will describe
+  the work plan and position it within the wider scientific and policy challenge.
+  Preliminary results for Delhi and Sao Paulo will be presented. Conclusions We will
+  organise a group exercise to develop a shared understanding of data issues relating
+  to modelling impacts in LMICs.'
+links:
+- name: URL
+  url: https://www.sciencedirect.com/science/article/pii/S2214140517304176
+---

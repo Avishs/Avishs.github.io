@@ -1,0 +1,48 @@
+---
+title: 'Environmental correlates of adolescent active travel to school in Asia: An
+  ecological study'
+authors:
+- Rizka Maulida
+- Rahul Goel
+- S. M. Labib
+- Tolu Oni
+- Esther MF. van Sluijs
+date: '2023-01-01'
+publishDate: '2024-03-23T17:06:28.048963Z'
+publication_types:
+- article-journal
+publication: '*Health & Place*'
+doi: https://doi.org/10.1016/j.healthplace.2023.103024
+abstract: 'Objectives This study aimed to examine the association between country-level
+  environmental correlates and the prevalence of active school travel (AST) in Asia
+  and country-level differences in AST by age and sex. Methods This ecological study
+  involved 31 Asian countries. Dependent variables were AST prevalence, AST prevalence
+  difference by age, and by sex. Independent variables were country-level environmental
+  correlates extracted using publicly available datasets, classified into physical
+  and social environments. Association estimates of each dependent variable and each
+  of the independent variables were calculated using univariate linear regression.
+  All variables were standardized to have a mean of 0 and a standard deviation of
+  1. Results Results showed that 1 standard deviation (SD) difference in urban population
+  percentage, night-time light, secondary-school enrolment, and prevalence of adult
+  insufficient physical activity were negatively associated with AST prevalence (SD
+  difference: -0.44 (-0.78 to -0.09), -0.40 (-0.76 to -0.04), -0.39 (-0.74 to -0.04),
+  and -0.40 (-0.76 to -0.03), respectively). A 1 SD difference in car per people was
+  associated with a -0.46 (-0.84 to -0.09) difference of AST prevalence by age. A
+  1 SD difference in PM2.5 concentration and of prevalence of adult insufficient physical
+  activity were associated with a difference of 0.38 (0.01–0.74) and 0.42 (0.03–0.80)
+  difference of AST prevalence by sex. Conclusions This study shows that Asian countries
+  with a greater number of people living in urban areas, lower levels of overall adult
+  physical activity and higher levels of night-time light have a lower prevalence
+  of adolescent AST. Country-level physical and social environmental correlates explained
+  some of the regional variance in AST. Future policy actions and interventions for
+  the region need to be contextually sensitive to the environmental correlates that
+  vary between countries.'
+tags:
+- Adolescents
+- Asia
+- Active school travel
+- Ecological study
+links:
+- name: URL
+  url: https://www.sciencedirect.com/science/article/pii/S1353829223000618
+---
