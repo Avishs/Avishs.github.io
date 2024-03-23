@@ -1,0 +1,27 @@
+---
+title: Distance-decay functions of travel to work trips in India
+authors:
+- Rahul Goel
+date: '2018-01-01'
+publishDate: '2024-03-23T17:06:27.887604Z'
+publication_types:
+- article-journal
+publication: '*Data in Brief*'
+doi: https://doi.org/10.1016/j.dib.2018.09.096
+abstract: In 2011, for the first time, Census in India reported travel distance and
+  mode of travel for the workers. The distance reported is in the form of aggregate
+  counts for each mode of travel in 7 distance bins (0–1 km, 2–5 km, 6–10 km, 11–20 km,
+  21–30 km, 31–50 km, and >50 km). In this data article, methods are described to
+  model categorical count data as distance-decay functions using continuous probability
+  distributions. The distributions have been developed for 8 categories of modes--walk,
+  cycle, motorised two-wheelers, car, tempo/auto rickshaw/taxi, bus, train, and all
+  modes combined, for the 33 mainland states of India and all states combined. Distance
+  for walk is modelled using exponential distribution, and for all the other modes
+  using lognormal or Weibull distribution. For estimating parameters of the distributions,
+  chi-square minimization has been used in a spreadsheet program. The data presented
+  includes parameters of the 272 (34 × 8) probability distributions as well as descriptive
+  statistics of these distributions.
+links:
+- name: URL
+  url: https://www.sciencedirect.com/science/article/pii/S2352340918311740
+---
