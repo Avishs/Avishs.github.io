@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Site Atlas — Jordan Ellis</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="dashboard.css">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="masthead">
+    <div class="id">Jordan <span>Ellis</span></div>
+    <div class="catalog-no">DEPT. OF COGNITIVE SCIENCE — EST. 2022</div>
+  </div>
+  <nav class="tabs">
+    <a href="../index.html">About</a>
+    <a href="../projects.html" class="active">Projects</a>
+    <a href="../publications.html">Publications</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../cv.html">CV</a>
+  </nav>
+</header>
+
+<div class="breadcrumb"><a href="../projects.html">Projects</a> / Study Site Atlas</div>
+
+<main>
+  <div class="dash-shell">
+
+    <div class="dash-head">
+      <div>
+        <div class="eyebrow">Geospatial dashboard</div>
+        <h1>Study Site Atlas</h1>
+        <p class="sub">Live overview of field sites, recruitment locations, and partner
+        organizations used across my transit-legibility and mental-model studies.
+        Filter by category or search a city to see how coverage breaks down.</p>
+      </div>
+    </div>
+
+    <!-- ============ FILTER BAR ============ -->
+    <div class="filter-bar">
+      <div class="filter-field">
+        <label for="filter-category">Category</label>
+        <select id="filter-category">
+          <option value="all">All categories</option>
+          <option value="field">Field study site</option>
+          <option value="recruitment">Recruitment site</option>
+          <option value="partner">Partner organization</option>
+          <option value="pilot">Pilot location</option>
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label for="filter-search">City / site name</label>
+        <input type="text" id="filter-search" placeholder="e.g. Riverton">
+      </div>
+
+      <div class="filter-field">
+        <label for="filter-min">Min. participants</label>
+        <select id="filter-min">
+          <option value="0">Any</option>
+          <option value="10">10+</option>
+          <option value="30">30+</option>
+          <option value="60">60+</option>
+        </select>
+      </div>
+
+      <button class="reset-btn" id="filter-reset">Reset filters</button>
+      <div class="count" id="filter-count">— sites shown</div>
+    </div>
+
+    <!-- ============ INDICATORS ============ -->
+    <div class="indicators">
+      <div class="indicator">
+        <div class="label">Sites shown</div>
+        <div class="value" id="ind-count">—</div>
+        <div class="delta" id="ind-count-delta"></div>
+      </div>
+      <div class="indicator">
+        <div class="label">Total participants</div>
+        <div class="value" id="ind-participants">—</div>
+        <div class="delta">across shown sites</div>
+      </div>
+      <div class="indicator">
+        <div class="label">Avg. comprehension score</div>
+        <div class="value" id="ind-score">—</div>
+        <div class="delta">0–100 scale</div>
+      </div>
+      <div class="indicator">
+        <div class="label">Cities covered</div>
+        <div class="value" id="ind-cities">—</div>
+        <div class="delta">unique locations</div>
+      </div>
+    </div>
+
+    <!-- ============ MAP ============ -->
+    <div class="map-shell">
+      <div id="map"></div>
+      <div class="map-legend">
+        <div class="row"><span class="swatch" style="background:#A9781F"></span> Field study site</div>
+        <div class="row"><span class="swatch" style="background:#B5502E"></span> Recruitment site</div>
+        <div class="row"><span class="swatch" style="background:#3D6B70"></span> Partner organization</div>
+        <div class="row"><span class="swatch" style="background:#6B6F8A"></span> Pilot location</div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <span>© 2026 Jordan Ellis</span>
+  <span>Riverton University</span>
+</footer>
+
+<script>
+/* =====================================================================
+   SAMPLE DATA
+   Replace this array with your real sites, or load it from a JSON/CSV
+   file with fetch(). Each feature needs: name, city, category, in the
+   list below ('field' | 'recruitment' | 'partner' | 'pilot'),
+   participants (number), score (0–100), and lng/lat.
+   ===================================================================== */
+const siteData = {
+  type: "FeatureCollection",
+  features: [
+    { name: "Downtown Transit Hub",     city: "Riverton",   category: "field",       participants: 64, score: 71, lng: -73.985, lat: 40.748 },
+    { name: "Riverton University Lab",  city: "Riverton",   category: "recruitment", participants: 112, score: 78, lng: -73.995, lat: 40.750 },
+    { name: "Meridian Health HQ",       city: "Riverton",   category: "partner",     participants: 0,   score: null, lng: -74.006, lat: 40.712 },
+    { name: "Northline Station",        city: "Ashford",    category: "field",       participants: 38, score: 65, lng: -75.163, lat: 39.952 },
+    { name: "Ashford Community Center", city: "Ashford",    category: "recruitment", participants: 27, score: 69, lng: -75.150, lat: 39.960 },
+    { name: "Bellcrest Transit Authority", city: "Bellcrest", category: "partner",   participants: 0,   score: null, lng: -71.058, lat: 42.360 },
+    { name: "Bellcrest Pilot Kiosk",    city: "Bellcrest",  category: "pilot",       participants: 15, score: 58, lng: -71.070, lat: 42.352 },
+    { name: "Harrow Metro Station",     city: "Harrow",     category: "field",       participants: 51, score: 74, lng: -87.629, lat: 41.878 },
+    { name: "Harrow Public Library",    city: "Harrow",     category: "recruitment", participants: 44, score: 72, lng: -87.635, lat: 41.885 },
+    { name: "Lakeside College",         city: "Lakeside",   category: "recruitment", participants: 33, score: 68, lng: -122.419, lat: 37.774 },
+    { name: "Lakeside Transit Pilot",   city: "Lakeside",   category: "pilot",       participants: 12, score: 61, lng: -122.431, lat: 37.766 },
+    { name: "Cedar Falls Rider Survey", city: "Cedar Falls", category: "field",      participants: 29, score: 70, lng: -93.263, lat: 44.978 },
+  ]
+};
+
+const categoryColors = {
+  field: "#A9781F",
+  recruitment: "#B5502E",
+  partner: "#3D6B70",
+  pilot: "#6B6F8A"
+};
+
+const categoryLabels = {
+  field: "Field study site",
+  recruitment: "Recruitment site",
+  partner: "Partner organization",
+  pilot: "Pilot location"
+};
+
+/* =====================================================================
+   MAP SETUP
+   Using MapLibre's free demo style/tiles. Swap `style:` for your own
+   MapTiler / Stadia Maps / self-hosted style URL for production use.
+   ===================================================================== */
+const map = new maplibregl.Map({
+  container: "map",
+  style: "https://demotiles.maplibre.org/style.json",
+  center: [-85, 40],
+  zoom: 3.2
+});
+
+map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+
+let markers = []; // keep references so we can remove/re-add on filter
+
+function popupHTML(f){
+  const p = f.participants ? `${f.participants} participants` : "no participants recorded";
+  const s = f.score != null ? ` · score ${f.score}` : "";
+  return `
+    <div class="popup-title">${f.name}</div>
+    <div class="popup-meta">${categoryLabels[f.category]}</div>
+    <div style="margin-top:6px; font-size:12.5px; color:#565C74;">${f.city} — ${p}${s}</div>
+  `;
+}
+
+function renderMarkers(features){
+  markers.forEach(m => m.remove());
+  markers = [];
+
+  features.forEach(f => {
+    const el = document.createElement("div");
+    el.style.width = "14px";
+    el.style.height = "14px";
+    el.style.borderRadius = "50%";
+    el.style.border = "2px solid white";
+    el.style.boxShadow = "0 1px 3px rgba(0,0,0,0.35)";
+    el.style.background = categoryColors[f.category];
+    el.style.cursor = "pointer";
+
+    const popup = new maplibregl.Popup({ offset: 14 }).setHTML(popupHTML(f));
+    const marker = new maplibregl.Marker({ element: el })
+      .setLngLat([f.lng, f.lat])
+      .setPopup(popup)
+      .addTo(map);
+
+    markers.push(marker);
+  });
+}
+
+/* =====================================================================
+   FILTERING + INDICATORS
+   ===================================================================== */
+const categorySelect = document.getElementById("filter-category");
+const searchInput = document.getElementById("filter-search");
+const minSelect = document.getElementById("filter-min");
+const resetBtn = document.getElementById("filter-reset");
+
+function applyFilters(){
+  const category = categorySelect.value;
+  const query = searchInput.value.trim().toLowerCase();
+  const minParticipants = parseInt(minSelect.value, 10);
+
+  const filtered = siteData.features.filter(f => {
+    if (category !== "all" && f.category !== category) return false;
+    if (query && !(f.name.toLowerCase().includes(query) || f.city.toLowerCase().includes(query))) return false;
+    if (f.participants < minParticipants) return false;
+    return true;
+  });
+
+  renderMarkers(filtered);
+  updateIndicators(filtered);
+
+  if (filtered.length){
+    const bounds = new maplibregl.LngLatBounds();
+    filtered.forEach(f => bounds.extend([f.lng, f.lat]));
+    map.fitBounds(bounds, { padding: 60, maxZoom: 8, duration: 500 });
+  }
+}
+
+function updateIndicators(filtered){
+  const totalParticipants = filtered.reduce((sum, f) => sum + (f.participants || 0), 0);
+  const scored = filtered.filter(f => f.score != null);
+  const avgScore = scored.length
+    ? Math.round(scored.reduce((sum, f) => sum + f.score, 0) / scored.length)
+    : "—";
+  const cities = new Set(filtered.map(f => f.city)).size;
+
+  document.getElementById("ind-count").textContent = filtered.length;
+  document.getElementById("ind-participants").textContent = totalParticipants.toLocaleString();
+  document.getElementById("ind-score").textContent = avgScore;
+  document.getElementById("ind-cities").textContent = cities;
+  document.getElementById("filter-count").textContent = `${filtered.length} of ${siteData.features.length} sites shown`;
+}
+
+categorySelect.addEventListener("change", applyFilters);
+searchInput.addEventListener("input", applyFilters);
+minSelect.addEventListener("change", applyFilters);
+resetBtn.addEventListener("click", () => {
+  categorySelect.value = "all";
+  searchInput.value = "";
+  minSelect.value = "0";
+  applyFilters();
+});
+
+map.on("load", applyFilters);
+</script>
+
+</body>
+</html>

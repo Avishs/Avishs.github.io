@@ -1,0 +1,207 @@
+/* Dashboard-specific styles — extends style.css, scoped to this page */
+
+.dash-shell{
+  max-width: 1180px;
+  margin: 0 auto 64px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: none;
+  padding: 40px;
+  border-radius: 0 0 10px 10px;
+}
+
+.breadcrumb{
+  max-width: 1180px;
+  margin: 0 auto 14px;
+  padding: 0 24px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+.breadcrumb a{ color: var(--ink-faint); text-decoration: none; border-bottom: 1px dotted var(--line); }
+.breadcrumb a:hover{ color: var(--accent-deep); }
+
+.dash-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.dash-head h1{ font-size: 28px; margin: 4px 0 6px; }
+.dash-head .sub{ color: var(--ink-soft); font-size: 15px; max-width: 60ch; }
+
+/* Filter bar */
+.filter-bar{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  background: var(--paper-dim);
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 24px;
+}
+
+.filter-field{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-field label{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+}
+
+.filter-field select,
+.filter-field input[type="text"]{
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--ink);
+  min-width: 170px;
+}
+
+.filter-field select:focus,
+.filter-field input:focus{
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.filter-bar .reset-btn{
+  align-self: flex-end;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+.filter-bar .reset-btn:hover{ background: var(--card); color: var(--ink); }
+
+.filter-bar .count{
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--accent-deep);
+  align-self: flex-end;
+}
+
+/* Indicator cards */
+.indicators{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 800px){
+  .indicators{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px){
+  .indicators{ grid-template-columns: 1fr; }
+}
+
+.indicator{
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 18px;
+  background: var(--card);
+}
+
+.indicator .label{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  margin-bottom: 8px;
+}
+
+.indicator .value{
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.indicator .delta{
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
+.indicator .delta.up{ color: #4C8058; }
+.indicator .delta.down{ color: var(--stamp); }
+
+/* Map */
+.map-shell{
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+#map{
+  width: 100%;
+  height: 520px;
+  background: var(--paper-dim); /* visible while tiles load */
+}
+
+.map-legend{
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 1;
+}
+
+.map-legend .row{ display: flex; align-items: center; gap: 7px; }
+.map-legend .swatch{ width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+/* MapLibre popup override to match site type */
+.maplibregl-popup-content{
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+.maplibregl-popup-content .popup-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14.5px;
+  margin-bottom: 2px;
+}
+.maplibregl-popup-content .popup-meta{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-deep);
+}
+
+@media (max-width: 640px){
+  .dash-shell{ padding: 24px 18px; }
+  #map{ height: 400px; }
+}
