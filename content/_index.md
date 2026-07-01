@@ -8,14 +8,13 @@ sections:
   - block: hero
     content:
       title: |
-        Wowchemy
-        Research Group
+        Asha Sreekala Viswanathan
       image:
         filename: welcome.jpg
       text: |
         <br>
         
-        The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
+        Hello! I am a PhD scholar at the Indian Institute of Technology Delhi. My interests include sustainable transportation, air pollution, public health and policy. 
   
   - block: collection
     content:
