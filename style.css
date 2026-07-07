@@ -1,22 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=Spectral:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root{
-  --paper: #FAF9F4;
-  --paper-dim: #F0EEE3;
+  --paper: #FFFFFF;        /* clean white base */
+  --paper-dim: #F5F7FA;    /* very light cool grey for strips/filters */
   --card: #FFFFFF;
-  --ink: #1B2033;
-  --ink-soft: #565C74;
-  --ink-faint: #8A8F9E;
-  --accent: #A9781F;      /* library-gold */
-  --accent-deep: #7C580F;
-  --stamp: #B5502E;       /* archive-stamp red, used sparingly */
-  --line: #DAD5C4;
-  --line-soft: #E9E5D8;
+  --ink: #0F1B2D;          /* near-black navy for text */
+  --ink-soft: #46556B;
+  --ink-faint: #8494A8;
+  --accent: #1D5FBF;       /* primary blue */
+  --accent-deep: #14407E;  /* darker blue for hovers/links */
+  --gold: #F2B705;         /* yellow highlight */
+  --gold-soft: #FDF3D2;    /* pale yellow wash for subtle backgrounds */
+  --stamp: #1D5FBF;        /* kept for compatibility; now maps to blue */
+  --line: #DDE4EC;         /* cool light borders */
+  --line-soft: #EBF0F5;
 
-  --font-display: 'Spectral', Georgia, serif;
-  --font-body: 'Newsreader', Georgia, serif;
+  --font-display: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 
   --max-w: 880px;
@@ -31,42 +32,29 @@ body{
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
-body::before{
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    linear-gradient(var(--line-soft) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-  background-size: 34px 34px;
-  opacity: 0.35;
-  mask-image: linear-gradient(to bottom, black, transparent 420px);
-  -webkit-mask-image: linear-gradient(to bottom, black, transparent 420px);
-}
+/* subtle grid texture removed for a cleaner, flatter modern look */
 
-a{ color: var(--accent-deep); text-decoration-color: var(--line); text-underline-offset: 3px; }
-a:hover{ color: var(--stamp); }
+a{ color: var(--accent); text-decoration-color: var(--line); text-underline-offset: 3px; }
+a:hover{ color: var(--accent-deep); }
 
 h1,h2,h3{
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ink);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .eyebrow{
   font-family: var(--font-mono);
-  font-size: 12.5px;
-  letter-spacing: 0.08em;
+  font-size: 12px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent-deep);
+  color: var(--accent);
 }
 
 .wrap{
@@ -97,12 +85,13 @@ h1,h2,h3{
 
 .masthead .id{
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 22px;
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: -0.02em;
 }
 
 .masthead .id span{
-  color: var(--accent-deep);
+  color: var(--accent);
 }
 
 .masthead .catalog-no{
@@ -116,24 +105,24 @@ nav.tabs{
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
-  gap: 6px;
-  border-bottom: 1px solid var(--line);
+  gap: 4px;
+  border-bottom: 2px solid var(--line);
 }
 
 nav.tabs a{
-  font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.03em;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--ink-soft);
   padding: 10px 16px 12px;
-  border: 1px solid transparent;
-  border-bottom: none;
-  border-radius: 6px 6px 0 0;
   position: relative;
-  top: 1px;
+  top: 2px;
+  border-bottom: 2px solid transparent;
   background: transparent;
+  border-radius: 6px 6px 0 0;
 }
 
 nav.tabs a:hover{
@@ -142,11 +131,9 @@ nav.tabs a:hover{
 }
 
 nav.tabs a.active{
-  color: var(--ink);
-  background: var(--card);
-  border-color: var(--line);
-  border-bottom: 1px solid var(--card);
-  font-weight: 500;
+  color: var(--accent-deep);
+  border-bottom: 2px solid var(--gold);
+  font-weight: 600;
 }
 
 /* ---------- Main content card ---------- */
@@ -159,17 +146,13 @@ main{
   max-width: var(--max-w);
   margin: 0 auto 64px;
   background: var(--card);
-  border: 1px solid var(--line);
-  border-top: none;
-  padding: 48px;
-  border-radius: 0 0 10px 10px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+  padding: 48px 24px;
 }
 
 @media (max-width: 640px){
   .sheet{ padding: 28px 22px; }
   .masthead{ flex-direction: column; gap: 4px; }
-  body{ font-size: 16.5px; }
+  body{ font-size: 16px; }
 }
 
 /* ---------- Hero (About page) ---------- */
@@ -179,7 +162,7 @@ main{
   gap: 32px;
   align-items: start;
   padding-bottom: 36px;
-  border-bottom: 1px dashed var(--line);
+  border-bottom: 1px solid var(--line);
   margin-bottom: 36px;
 }
 
@@ -190,15 +173,16 @@ main{
 .portrait{
   width: 128px;
   height: 128px;
-  border-radius: 8px;
-  background: linear-gradient(155deg, var(--accent) 0%, var(--accent-deep) 100%);
-  color: var(--paper);
+  border-radius: 12px;
+  background: linear-gradient(150deg, var(--accent) 0%, var(--accent-deep) 100%);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 40px;
-  font-weight: 600;
+  font-size: 36px;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(29, 95, 191, 0.22);
 }
 
 .hero h1{
@@ -208,80 +192,110 @@ main{
 
 .hero .tagline{
   font-family: var(--font-mono);
-  font-size: 14px;
-  color: var(--ink-soft);
+  font-size: 13.5px;
+  color: var(--accent);
   margin: 0 0 16px;
 }
 
 .hero .bio{
   color: var(--ink-soft);
-  max-width: 58ch;
+  max-width: 60ch;
 }
 
 .contact-row{
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 10px;
   margin-top: 18px;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 12.5px;
 }
 
-.contact-row a{ text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+.contact-row a{
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
+  color: var(--accent-deep);
+  transition: all 0.15s ease;
+}
+.contact-row a:hover{
+  border-color: var(--accent);
+  background: var(--paper-dim);
+}
 
 /* ---------- Now / status strip ---------- */
 .status-strip{
   display: flex;
   gap: 10px;
   align-items: baseline;
-  font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
   color: var(--ink-soft);
-  background: var(--paper-dim);
-  border: 1px solid var(--line-soft);
-  border-radius: 6px;
-  padding: 12px 16px;
+  background: var(--gold-soft);
+  border: 1px solid #F0DFA0;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 14px 18px;
   margin-bottom: 36px;
 }
 
 .status-strip .dot{
-  width: 7px; height: 7px; border-radius: 50%;
-  background: #4C8058; flex: none; margin-top: 6px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold); flex: none; margin-top: 7px;
 }
+
+.status-strip strong{ color: var(--ink); }
 
 /* ---------- Section blocks ---------- */
 .section-title{
-  font-size: 13px;
-  margin: 0 0 18px;
+  font-size: 12px;
+  margin: 0 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-title::after{
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
 }
 
 .stack{ display: flex; flex-direction: column; gap: 26px; }
 
 /* ---------- Cards: projects / publications / posts ---------- */
 .entry{
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--line-soft);
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
-.entry:last-child{ border-bottom: none; padding-bottom: 0; }
+.entry:hover{
+  border-color: var(--accent);
+  box-shadow: 0 3px 12px rgba(29, 95, 191, 0.08);
+}
+.entry:last-child{ padding-bottom: 22px; }
 
 .entry-meta{
   font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--accent-deep);
-  letter-spacing: 0.03em;
-  margin-bottom: 6px;
+  font-size: 11.5px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .entry h3{
-  font-size: 19px;
+  font-size: 18px;
   margin: 0 0 6px;
 }
 
 .entry p{
   color: var(--ink-soft);
+  font-size: 15px;
   margin: 0 0 10px;
 }
 
@@ -295,43 +309,46 @@ main{
 .tag{
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 11px;
-  padding: 2px 8px;
-  border: 1px solid var(--line);
+  font-size: 10.5px;
+  padding: 3px 10px;
+  background: var(--gold-soft);
+  border: 1px solid #F0DFA0;
   border-radius: 999px;
-  color: var(--ink-soft);
+  color: #7A5C05;
 }
 
 /* ---------- CV specific ---------- */
-.cv-block{ margin-bottom: 30px; }
+.cv-block{ margin-bottom: 34px; }
 .cv-row{
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: 18px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 .cv-row .when{
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--ink-faint);
   padding-top: 3px;
 }
-.cv-row h4{ margin: 0 0 3px; font-family: var(--font-display); font-size: 17px; font-weight: 600;}
-.cv-row .where{ color: var(--ink-soft); font-size: 15px; margin-bottom: 4px; }
+.cv-row h4{ margin: 0 0 3px; font-family: var(--font-display); font-size: 16px; font-weight: 600;}
+.cv-row .where{ color: var(--ink-soft); font-size: 14.5px; margin-bottom: 4px; }
 
 .download-btn{
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 13px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13.5px;
   text-decoration: none;
-  color: var(--paper);
-  background: var(--ink);
-  padding: 10px 18px;
-  border-radius: 6px;
+  color: #FFFFFF;
+  background: var(--accent);
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
 }
-.download-btn:hover{ background: var(--accent-deep); color: var(--paper); }
+.download-btn:hover{ background: var(--accent-deep); color: #FFFFFF; }
 
 @media (max-width: 640px){
   .cv-row{ grid-template-columns: 1fr; gap: 4px; }
@@ -341,7 +358,8 @@ main{
 footer{
   max-width: var(--max-w);
   margin: 0 auto 60px;
-  padding: 0 24px;
+  padding: 20px 24px 0;
+  border-top: 1px solid var(--line);
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--ink-faint);
